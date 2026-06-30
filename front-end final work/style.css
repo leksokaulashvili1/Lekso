@@ -1,0 +1,646 @@
+/* =========================================
+   Global Styles & Reset
+   ========================================= */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+html,
+body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to right, #9500ff, #0e1111);
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section,
+footer,
+article {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.green {
+  color: #22c55e;
+}
+
+.Full-width {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================
+   Header
+   ========================================= */
+header {
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #50008a;
+  height: 100px; /* ოდნავ შევამცირეთ სიმაღლე */
+  padding: 0 20px; /* 50px ძალიან ბევრი იყო პატარა ეკრანისთვის */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #22c55e;
+  position: fixed;
+  z-index: 10;
+  box-sizing: border-box; /* აუცილებელია! */
+}
+
+header img {
+  max-width: 180px; /* 220px-ის ნაცვლად */
+  width: 100%;
+  margin: 0 15px;
+}
+
+.header-button {
+  max-width: 150px; /* 180px-ის ნაცვლად */
+  color: black;
+  padding: 12px 15px;
+  font-size: 14px; /* ფონტის ზომა შევამცირეთ, რომ ტექსტი ჩაეტიოს */
+  background-color: #22c55e;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.header-button:hover {
+  background: transparent;
+  border-color: white;
+  color: white;
+}
+
+/* Burger Menu Animation */
+#menu-check {
+  display: none;
+}
+
+.burger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger-icon span {
+  display: block;
+  height: 5px;
+  width: 100%;
+  background-color: #22c55e;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+#menu-check:checked ~ .burger-icon span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+#menu-check:checked ~ .burger-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-check:checked ~ .burger-icon span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* =========================================
+   First Section (Attention / Hero)
+   ========================================= */
+.Attention {
+  margin: 200px auto 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.Attention h1 {
+  font-size: 64px;
+}
+
+.Attention p {
+  font-size: 20px;
+}
+
+.Attention div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.A-1,
+.A-2 {
+  width: 180px;
+  padding: 15px 20px;
+  font-weight: 700;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.A-1 {
+  background-color: #22c55e;
+  color: black;
+  border: 2px solid transparent;
+}
+
+.A-1:hover {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+.A-2 {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.A-2:hover {
+  background-color: #22c55e;
+  color: black;
+  border-color: transparent;
+}
+
+/* =========================================
+   Third Section (Event Card)
+   ========================================= */
+.event-card {
+  width: min(100%, 1350px);
+  height: 600px;
+  margin: 30px auto;
+  border-radius: 30px;
+  background-image: url(./img/P1.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.events-text {
+  width: 100%;
+  max-width: 800px;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  padding-right: 30px;
+}
+
+.events-text h2 {
+  font-size: 40px;
+}
+
+.events-text p {
+  font-size: 20px;
+}
+
+/* =========================================
+   Fourth Section (Categories)
+   ========================================= */
+.categories {
+  width: 90%;
+  max-width: 1350px;
+  margin: 100px auto;
+}
+
+.cat-title {
+  font-size: 55px;
+  margin: 5% 0;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* საშუალებას აძლევს ელემენტებს ჩამოვიდნენ ქვემოთ */
+  gap: 20px;
+  width: 100%;
+}
+
+.rectangle {
+  background-color: #50008a;
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.rectangle img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.rectangle h4 {
+  color: #22c55e;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.rectangle button {
+  width: 180px;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.rectangle button:hover {
+  background-color: #22c55e;
+  color: black;
+  font-weight: 700;
+  border-color: transparent;
+}
+
+/* =========================================
+   Fifth Section (News)
+   ========================================= */
+.news {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 150px auto;
+  gap: 50px;
+  width: 90%;
+  max-width: 1350px;
+}
+
+.news img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+.news-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  max-width: 600px;
+}
+
+.news h4 {
+  font-size: 60px;
+  line-height: 1.1;
+}
+
+.news p {
+  font-size: 24px;
+}
+
+.news-button {
+  width: 180px;
+  color: black;
+  padding: 15px 20px;
+  background-color: #22c55e;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.news-button:hover {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+/* =========================================
+   Sixth Section (Reviews)
+   ========================================= */
+.reviews {
+  width: 90%;
+  max-width: 1350px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  margin: 100px auto;
+}
+
+.reviews h4 {
+  font-size: 55px;
+}
+
+.mini-header {
+  font-size: 22px;
+}
+
+.review-cards {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto;
+  gap: 30px;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.review-card {
+  min-width: 250px;
+  height: 300px;
+  background-color: #50008a;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.review-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.review {
+  text-align: center;
+  font-size: 14px;
+}
+
+.more {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.more:hover {
+  background: white;
+  color: #50008a;
+}
+
+/* =========================================
+   Seventh Section (Join)
+   ========================================= */
+.join {
+  width: 90%;
+  max-width: 1350px;
+  height: 400px;
+  margin: 100px auto;
+  border-radius: 30px;
+  position: relative;
+  background-image:
+    linear-gradient(rgba(74, 20, 140, 0.7), rgba(74, 20, 140, 0.7)),
+    url("./img/P1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.join-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 20px;
+}
+
+.join-box h5 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.join-box div {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+footer {
+  background-color: black;
+  padding: 40px 20px;
+}
+
+footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #22c55e;
+}
+
+/* =========================================
+   Responsive Design (Media Queries)
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .news {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .news-text {
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0 20px;
+  }
+
+  header img {
+    width: 150px;
+  }
+
+  .header-button {
+    display: none; /* მობილურზე ვმალავთ Header ღილაკს, რომ ადგილი გამოთავისუფლდეს */
+  }
+
+  .Attention h1 {
+    font-size: 42px;
+  }
+
+  .Attention p {
+    font-size: 16px;
+  }
+
+  .events-text h2 {
+    width: calc(100% - 60px);
+  }
+
+  .cat-title,
+  .news h4,
+  .reviews h4,
+  .join-box h5 {
+    font-size: 36px;
+  }
+
+  .news p,
+  .mini-header {
+    font-size: 18px;
+  }
+
+  .event-card {
+    border-radius: 0;
+    height: 400px;
+  }
+
+  .join {
+    border-radius: 0;
+    width: 100%;
+  }
+
+  footer ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Attention h1 {
+    font-size: 32px;
+  }
+
+  .Attention div,
+  .join-box div {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .A-1,
+  .A-2 {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .events-text {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .events-text h2 {
+    font-size: 24px;
+  }
+}
+
+/* Header Scroll-ის კლასი (თავდაპირველად header-ს მიეცი background-color: transparent;) */
+header.scrolled {
+  background-color: #50008a; /* სქროლვისას იღებს ამ ფერს */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.4s ease-in-out;
+}
+
+/* Cookie Banner CSS */
+.cookie-banner {
+  display: none; /* თავიდან დამალულია, JS აჩენს */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #22c55e;
+  color: black;
+  padding: 15px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 9999;
+  font-weight: 700;
+}
+
+.cookie-banner button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Mobile Menu CSS */
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  background-color: #50008a;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 3px solid #22c55e;
+}
+
+.mobile-nav.active {
+  display: flex; /* JS ამატებს active კლასს და მენიუ ჩნდება */
+}
+
+.mobile-nav a {
+  font-size: 20px;
+  font-weight: 700;
+}
+.mobile-nav a:hover {
+  color: #22c55e;
+}

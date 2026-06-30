@@ -1,0 +1,145 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+.inline-block{
+    display: inline-block;
+}
+
+body{
+    background: linear-gradient(to right,#9500ff,#0E1111);
+}
+header{
+    height: 120px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:3px solid #22C55E ;
+}
+
+header img{
+    width: 220px;
+    margin: 0 auto;
+}
+.header-button{
+    width: 180px;
+    color: black;
+    padding: 15px 20px;
+    background-color: #22C55E;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: 0;
+}
+
+#menu-check {
+  display: none;
+}
+
+
+.burger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+
+.burger-icon span {
+  display: block;
+  height: 5px;
+  width: 100%;
+  background-color: #22C55E; 
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ანიმაცია: გარდაქმნა "X" ნიშნად დაკლიკებისას */
+#menu-check:checked ~ .burger-icon span:nth-child(1) {
+  transform: translateY(9.5px) rotate(45deg);
+}
+
+#menu-check:checked ~ .burger-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-check:checked ~ .burger-icon span:nth-child(3) {
+  transform: translateY(-9.5px) rotate(-45deg);
+}
+
+
+/* First Section */
+.Attention{
+    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.Attention h1{
+    font-size: 64px;
+}
+.Attention{
+    font-size: 20px;
+}
+.green{
+    color: #22C55E;
+}
+.A-1{
+    width: 180px;
+    color: black;
+    padding: 15px 20px;
+    background-color: #22C55E;
+    font-weight: 700;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: 0;
+}
+.A-2{
+    width: 180px;
+    padding: 15px 20px;
+    background:transparent ;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: 2px solid white;
+}
+.Attention div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+/* First Section */
+
+
+/* secont section */
+.Full-width{
+    width: 100%;
+    
+}
+/* second section */
+
+
+/* third section */
+.event-card{
+    width: 1350px;
+    height: 600px;
+    display: block;
+    margin: 30px auto;
+    border-radius: 30px;
+    position: relative;
+    background-image: url(./img/P1.jpg);
+}
+.events-text{
+    position: absolute;
+}
+
+/* third section */
